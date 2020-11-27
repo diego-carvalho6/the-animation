@@ -1,0 +1,187 @@
+
+body{
+    background-image: linear-gradient(to left, #111, #115);
+    
+}
+
+.header{
+    color: #ffc;
+    margin: 10px auto;
+    text-align: center;
+}
+
+
+.box{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    max-width: 1200px;
+    max-height: 1200px;
+    
+    margin: 0 auto;
+    box-sizing: border-box;
+
+    
+}
+.cube{
+    position: absolute;
+    box-sizing: border-box;
+    width: 220px;
+    height: 220px;
+    
+    perspective: 1000px;
+    
+    
+    
+}
+.cube-area{
+    position: absolute;
+    transform-style: preserve-3d;
+    
+    width: 100%;
+    height: 100%;
+    animation-name: rotateX;
+    animation-duration: 16s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    
+}
+.front, .back, .left, .right, .bottom, .top{
+    width: 220px;
+    height: 220px;
+    opacity: 50%;
+    position: absolute;
+    border: 1px solid red;
+    
+}
+.back{
+
+    transform: rotateY(180deg) translateZ(110px) ;
+    background-image: linear-gradient(45deg, #111, #1fa);
+}
+.left{
+    transform: rotateY(-90deg) translateZ(110px) ;
+    background-image: linear-gradient(45deg, #1fa, #2af);
+}
+.right{
+    transform:  rotateY(90deg) translateZ(110px) ;
+    background-image: linear-gradient(45deg, #daf, #eff);
+}
+.front{
+    transform: translateZ(110px);
+    background-image: linear-gradient(45deg, #2af, #daf);
+}
+.bottom{
+    transform: rotateX(-90deg) translateZ(110px);
+    background-image: linear-gradient(45deg, #eff, #fff);
+}
+.top{
+    transform: rotateX(90deg) translateZ(110px);
+    background-image: linear-gradient(45deg, #f1f, white);
+}
+.box1{
+    left: 0;
+    top: 0;
+    
+    animation-name: box1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 8;
+    --x: 0;
+    --y: 0;
+    --x-1: 220px;
+    --y-1: 0;
+    --x-2: 220px;
+    --y-2: 220px;
+    --x-3: 0;
+    --y-3: 220px; 
+    --x-4: 0;
+    --y-4: 0; 
+}
+.box2{
+    left: 0;
+    bottom: 0;
+
+    animation-name: box1;
+    animation-duration: 4s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 4;
+    --x: 0;
+    --y: 0;
+    --x-1: 220px;
+    --y-1: 0;
+    --x-2: 220px;
+    --y-2: -220px;
+    --x-3: 0;
+    --y-3: -220px; 
+    --x-4: 0;
+    --y-4: 0; 
+}
+.box3{
+    right: 0;
+    bottom: 0;
+
+    animation-name: box1;
+    animation-duration: 8s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease;
+    animation-iteration-count: 2;
+    --x: 0;
+    --y: 0;
+    --x-1: -220px;
+    --y-1: 0;
+    --x-2: -220px;
+    --y-2: -220px;
+    --x-3: 0;
+    --y-3: -220px; 
+    --x-4: 0;
+    --y-4: 0; 
+}
+.box4{
+    right: 0;
+    top: 0;
+
+    animation-name: box1;
+    animation-duration: 16s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in;
+    animation-iteration-count: 1;
+    --x: 0;
+    --y: 0;
+    --x-1: -220px;
+    --y-1: 0;
+    --x-2: -220px;
+    --y-2: 220px;
+    --x-3: 0;
+    --y-3: 220px; 
+    --x-4: 0;
+    --y-4: 0; 
+}
+@keyframes box1{
+    0%{
+        transform: translate(var(--x), var(--y));
+    }
+    25%{
+        transform: translate(var(--x-1), var(--y-1));
+    }
+    50%{
+        transform: translate(var(--x-2), var(--y-2));
+    }
+    75%{
+        transform: translate(var(--x-3), var(--y-3));
+    }
+    100%{
+        transform: translate(var(--x-4), var(--y-4));
+    }
+}
+@keyframes rotateX{
+    0%{
+        transform: rotateX(0) rotateY(0);
+    }
+    100%{
+        transform: rotateX(1080deg) rotateY(1440deg)
+    }    
+}
