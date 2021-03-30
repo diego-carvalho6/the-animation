@@ -2,7 +2,7 @@
 <h1 align="center">
     <a href=https://zacarias_link.gitlab.io/the-animation/>🔗 the animation</a>
 </h1>
-<p align="center">🚀 a simple page animation made with only css and html/p>
+<p align="center">🚀 a simple page animation made with only css and html</p>
 
 <h2>using</h2>
 
